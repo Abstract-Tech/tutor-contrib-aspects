@@ -1,5 +1,5 @@
 RUN --mount=type=cache,target=/openedx/.cache/pip,sharing=shared \
-    pip install "platform-plugin-aspects==v1.1.0"
+    pip install git+https://github.com/Abstract-Tech/platform-plugin-aspects@fix-credentials-quince#egg=platform_plugin_aspects
 
 RUN --mount=type=cache,target=/openedx/.cache/pip,sharing=shared \
-    pip install "edx-event-routing-backends>=9.3.0,<9.4"
+    pip install --force-reinstall --no-deps git+https://github.com/Abstract-Tech/event-routing-backends.git@my_quince_patch#egg=edx-event-routing-backends
